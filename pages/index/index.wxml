@@ -49,6 +49,8 @@
       </swiper-item>
     </swiper>
     <van-empty wx:if="{{!goods || goods.length == 0}}" description="{{ $t.common.empty }}" />
+
+    <!--购物数量tag thumb图片 -->
     <van-card
       wx:for="{{goods}}" wx:key="id"
       centered="true"
@@ -85,6 +87,7 @@
   </scroll-view>
 </view>
 
+<!--购物车栏目 -->
 <view class="cart-bar" wx:if="{{shippingCarInfo && shippingCarInfo.number}}">
   <view class="l" bindtap="showCartPop">
     <van-button type="default" round icon="shopping-cart-o">{{ $t.cart.title }}</van-button>
@@ -99,7 +102,7 @@
 </view>
 
 
-
+<!--物品详情选择列表 -->
 <van-popup
   show="{{ showGoodsDetailPOP }}"
   custom-style="max-height: 80%;z-index:99999;"
@@ -148,6 +151,7 @@
   </view>
 </van-popup> 
 
+<!--购物车栏目详情列表 -->
 <van-popup
   show="{{ showCartPop }}"
   position="bottom"
